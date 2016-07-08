@@ -1,7 +1,11 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
-require 'factory_girl_rails'
 require 'rspec/rails'
+require 'factory_girl_rails'
+require 'webmock/rspec'
+require_relative 'support/vcr_setup'
+require_relative 'support/spec_test_helper'
+
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
@@ -22,6 +26,8 @@ RSpec.configure do |config|
       example.run
     end
   end
+
+  config.include SpecTestHelper, :type => :controller
 
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest

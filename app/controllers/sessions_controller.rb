@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     if authenticated_user?
       set_session
-      redirect_to root_url, :notice => "Logged in!"
+      redirect_to books_path
     else
       flash.now.alert = "Invalid email or password"
       render "new"

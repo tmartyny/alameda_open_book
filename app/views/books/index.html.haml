@@ -1,0 +1,7 @@
+%div List o'books
+= form_tag(search_books_path, method: :post) do
+  Search: 
+  =text_field_tag :query
+  =submit_tag "Go"
+- if @search_results
+  = render partial: "search_results"

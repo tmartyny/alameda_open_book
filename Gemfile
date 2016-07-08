@@ -24,8 +24,8 @@ gem 'bcrypt'
 # Use Unicorn as the app server
 gem 'unicorn'
 
-# Use ElasticSearch for search
-gem 'elasticsearch-rails'
+# Use Mechanize to search the library since it has no API
+gem 'mechanize'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -35,6 +35,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.4'
   gem 'shoulda-matchers', '~> 3.1'
   gem "factory_girl_rails", "~> 4.0"
+  gem 'awesome_print'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do

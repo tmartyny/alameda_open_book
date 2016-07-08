@@ -6,4 +6,9 @@ Rails.application.routes.draw do
   root :to => "users#new"
   resources :users
   resources :sessions
+  resources :books do
+    collection do
+      post 'search'
+    end
+  end
 end
